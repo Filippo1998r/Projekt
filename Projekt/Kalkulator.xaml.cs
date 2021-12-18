@@ -1129,7 +1129,7 @@ namespace Projekt
         private bool CzyMaZnaki(string operation)
             => Regex.Matches(operation, "[+]").Count > 1 || Regex.Matches(operation, "[-]").Count > 1 || operation.Contains('*') || operation.Contains(':') || operation.Contains('√') || operation.Contains('²') || operation.Contains("1/");//ze znakami
 
-        private decimal CalculateResult(string operation)
+        private double CalculateResult(string operation)
         {
             if (operation.Contains('E'))
             {
@@ -1146,14 +1146,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[2]))
                                 {
-                                    return (decimal)(Convert.ToDouble(firstNum)
-                                           + Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2)));
+                                    return Convert.ToDouble(firstNum)
+                                           + Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(firstNum)
+                                    return Convert.ToDouble(firstNum)
                                            + (Convert.ToDouble(elements[2])
-                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2))));
+                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2)));
                                 }
                             }
                             else
@@ -1163,14 +1163,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[2]))
                                 {
-                                    return (decimal)(Convert.ToDouble(firstNum)
-                                           + Math.Sqrt(Convert.ToDouble(elements[3])));
+                                    return Convert.ToDouble(firstNum)
+                                           + Math.Sqrt(Convert.ToDouble(elements[3]));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(firstNum)
+                                    return Convert.ToDouble(firstNum)
                                            + (Convert.ToDouble(elements[2])
-                                              * Math.Sqrt(Convert.ToDouble(elements[3]))));
+                                              * Math.Sqrt(Convert.ToDouble(elements[3])));
                                 }
                             }
                         }
@@ -1179,8 +1179,8 @@ namespace Projekt
                             string[] elements = operation.Split('+', '²');
                             string firstNum = string.Join("+", elements.Take(2));
 
-                            return (decimal)(Convert.ToDouble(firstNum)
-                                    + Math.Pow(Convert.ToDouble(elements[2]), 2));
+                            return Convert.ToDouble(firstNum)
+                                    + Math.Pow(Convert.ToDouble(elements[2]), 2);
                         }
                         else
                         {
@@ -1192,8 +1192,8 @@ namespace Projekt
                             }
                             string firstNum = string.Join("+", elements.Take(2));
 
-                            return (decimal)(Convert.ToDouble(firstNum)
-                                   + Convert.ToDouble(elements[2]));
+                            return Convert.ToDouble(firstNum)
+                                   + Convert.ToDouble(elements[2]);
                         }
                     }
                     else if (operation.Contains('-'))
@@ -1206,14 +1206,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           - Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                    return Convert.ToDouble(elements[0])
+                                           - Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            - (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2))));
+                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2)));
                                 }
                             }
                             else
@@ -1222,14 +1222,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           - Math.Sqrt(Convert.ToDouble(elements[2])));
+                                    return Convert.ToDouble(elements[0])
+                                           - Math.Sqrt(Convert.ToDouble(elements[2]));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            - (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                              * Math.Sqrt(Convert.ToDouble(elements[2])));
                                 }
                             }
                         }
@@ -1237,14 +1237,18 @@ namespace Projekt
                         {
                             string[] elements = operation.Split('-', '²');
 
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   - Math.Pow(Convert.ToDouble(elements[1]), 2));
+                            return Convert.ToDouble(elements[0])
+                                   - Math.Pow(Convert.ToDouble(elements[1]), 2);
                         }
                         else
                         {
                             string[] elements = operation.Split('-');
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   - Convert.ToDouble(elements[1]));
+                            if (string.IsNullOrEmpty(elements[1]))
+                            {
+                                elements[1] = elements[0] ;
+                            }
+                            return Convert.ToDouble(elements[0])
+                                   - Convert.ToDouble(elements[1]);
                         }
                     }
                     else if (operation.Contains('*'))
@@ -1257,14 +1261,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                    return Convert.ToDouble(elements[0])
+                                           * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            * (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2))));
+                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
                                 }
                             }
                             else
@@ -1273,22 +1277,22 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           * Math.Sqrt(Convert.ToDouble(elements[2])));
+                                    return Convert.ToDouble(elements[0])
+                                           * Math.Sqrt(Convert.ToDouble(elements[2]));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            * (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                              * Math.Sqrt(Convert.ToDouble(elements[2])));
                                 }
                             }
                         }
                         else if (operation.Contains('²'))
                         {
                             string[] elements = operation.Split('*', '²');
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   * Math.Pow(Convert.ToDouble(elements[1]), 2));
+                            return Convert.ToDouble(elements[0])
+                                   * Math.Pow(Convert.ToDouble(elements[1]), 2);
                         }
                         else
                         {
@@ -1299,7 +1303,7 @@ namespace Projekt
                                 elements[1] = elements[0];
                             }
 
-                            return (decimal)(Convert.ToDouble(elements[0]) * Convert.ToDouble(elements[1]));
+                            return Convert.ToDouble(elements[0]) * Convert.ToDouble(elements[1]);
                         }
                     }
                     else if (operation.Contains(':'))
@@ -1312,14 +1316,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                    return Convert.ToDouble(elements[0])
+                                           / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            / (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2))));
+                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2)));
                                 }
                             }
                             else
@@ -1328,22 +1332,22 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))                          //Jeśli nic nie ma przed znakiem działania (.Split(...))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           / Math.Sqrt(Convert.ToDouble(elements[2])));
+                                    return Convert.ToDouble(elements[0])
+                                           / Math.Sqrt(Convert.ToDouble(elements[2]));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            / (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                              * Math.Sqrt(Convert.ToDouble(elements[2])));
                                 }
                             }
                         }
                         else if (operation.Contains('²'))
                         {
                             string[] elements = operation.Split(':', '²');
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   / Math.Pow(Convert.ToDouble(elements[1]), 2));
+                            return Convert.ToDouble(elements[0])
+                                   / Math.Pow(Convert.ToDouble(elements[1]), 2);
                         }
                         else
                         {
@@ -1354,8 +1358,8 @@ namespace Projekt
                                 elements[1] = elements[0];
                             }
 
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   / Convert.ToDouble(elements[1]));
+                            return Convert.ToDouble(elements[0])
+                                   / Convert.ToDouble(elements[1]);
                         }
                     }
                     else if (operation.Contains('/'))
@@ -1367,8 +1371,8 @@ namespace Projekt
                             elements[1] = elements[0];
                         }
 
-                        return (decimal)(Convert.ToDouble(elements[0])
-                               / Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0])
+                               / Convert.ToDouble(elements[1]);
 
                     }
                     else if (operation.Contains('√'))
@@ -1378,12 +1382,12 @@ namespace Projekt
                             string[] elements = operation.Split('√', '²');
                             if (string.IsNullOrEmpty(elements[0]))
                             {
-                                return (decimal)Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
+                                return Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2)));
+                                return Convert.ToDouble(elements[0])
+                                       * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
                             }
                         }
                         else
@@ -1392,13 +1396,13 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[0]))
                             {
-                                return (decimal)Math.Sqrt(Convert.ToDouble(elements[1]));
+                                return Math.Sqrt(Convert.ToDouble(elements[1]));
                             }
 
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       * Math.Sqrt(Convert.ToDouble(elements[1])));
+                                return Convert.ToDouble(elements[0])
+                                       * Math.Sqrt(Convert.ToDouble(elements[1]));
                             }
                         }
                     }
@@ -1406,7 +1410,7 @@ namespace Projekt
                     {
                         string[] elements = operation.Split('²');
 
-                        return (decimal)Math.Pow(Convert.ToDouble(elements[0]), 2);
+                        return Math.Pow(Convert.ToDouble(elements[0]), 2);
                     }
                 }
 
@@ -1423,14 +1427,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[2]))
                                 {
-                                    return (decimal)(Convert.ToDouble(firstNum)
-                                           - Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2)));
+                                    return Convert.ToDouble(firstNum)
+                                           - Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(firstNum)
+                                    return Convert.ToDouble(firstNum)
                                            - (Convert.ToDouble(elements[2])
-                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2))));
+                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2)));
                                 }
                             }
                             else
@@ -1440,14 +1444,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[2]))
                                 {
-                                    return (decimal)(Convert.ToDouble(firstNum)
-                                           - Math.Sqrt(Convert.ToDouble(elements[3])));
+                                    return Convert.ToDouble(firstNum)
+                                           - Math.Sqrt(Convert.ToDouble(elements[3]));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(firstNum)
+                                    return Convert.ToDouble(firstNum)
                                            - (Convert.ToDouble(elements[2])
-                                              * Math.Sqrt(Convert.ToDouble(elements[3]))));
+                                              * Math.Sqrt(Convert.ToDouble(elements[3])));
                                 }
                             }
                         }
@@ -1456,8 +1460,8 @@ namespace Projekt
                             string[] elements = operation.Split('-', '²');
                             string firstNum = string.Join("-", elements.Take(2));
 
-                            return (decimal)(Convert.ToDouble(firstNum)
-                                    - Math.Pow(Convert.ToDouble(elements[2]), 2));
+                            return Convert.ToDouble(firstNum)
+                                    - Math.Pow(Convert.ToDouble(elements[2]), 2);
                         }
                         else
                         {
@@ -1465,12 +1469,14 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[2]))
                             {
-                                elements[2] = elements[0] + elements[1];
+                                return 0;
                             }
+                            else
+                            {
+                                string firstNum = string.Join("-", elements.Take(2));
 
-                            string firstNum = string.Join("-", elements.Take(2));
-
-                            return (decimal)(Convert.ToDouble(firstNum) - Convert.ToDouble(elements[2])); //Convert.ToDouble(firstNum) + Convert.ToDouble(secondNum);
+                                return Convert.ToDouble(firstNum) - Convert.ToDouble(elements[2]); //Convert.ToDouble(firstNum) + Convert.ToDouble(secondNum);
+                            }
                         }
                     }
                     else if (operation.Contains('+'))//w wypadku notacji np. "1E-15 + coś tam"
@@ -1483,14 +1489,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           + Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                    return Convert.ToDouble(elements[0])
+                                           + Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            + (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2))));
+                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2)));
                                 }
                             }
                             else
@@ -1499,14 +1505,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           + Math.Sqrt(Convert.ToDouble(elements[2])));
+                                    return Convert.ToDouble(elements[0])
+                                           + Math.Sqrt(Convert.ToDouble(elements[2]));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            + (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                              * Math.Sqrt(Convert.ToDouble(elements[2])));
                                 }
                             }
                         }
@@ -1514,14 +1520,18 @@ namespace Projekt
                         {
                             string[] elements = operation.Split('+', '²');
 
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   + Math.Pow(Convert.ToDouble(elements[1]), 2));
+                            return Convert.ToDouble(elements[0])
+                                   + Math.Pow(Convert.ToDouble(elements[1]), 2);
                         }
                         else
                         {
                             string[] elements = operation.Split('+');
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   + Convert.ToDouble(elements[1]));
+                            if (string.IsNullOrEmpty(elements[1]))
+                            {
+                                elements[1] = elements[0];
+                            }
+                            return Convert.ToDouble(elements[0])
+                                   + Convert.ToDouble(elements[1]);
                         }
                     }
                     else if (operation.Contains('*'))
@@ -1534,14 +1544,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                    return Convert.ToDouble(elements[0])
+                                           * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            * (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2))));
+                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
                                 }
                             }
                             else
@@ -1550,22 +1560,22 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           * Math.Sqrt(Convert.ToDouble(elements[2])));
+                                    return Convert.ToDouble(elements[0])
+                                           * Math.Sqrt(Convert.ToDouble(elements[2]));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            * (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                              * Math.Sqrt(Convert.ToDouble(elements[2])));
                                 }
                             }
                         }
                         else if (operation.Contains('²'))
                         {
                             string[] elements = operation.Split('*', '²');
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   * Math.Pow(Convert.ToDouble(elements[1]), 2));
+                            return Convert.ToDouble(elements[0])
+                                   * Math.Pow(Convert.ToDouble(elements[1]), 2);
                         }
                         else
                         {
@@ -1576,7 +1586,7 @@ namespace Projekt
                                 elements[1] = elements[0];
                             }
 
-                            return (decimal)(Convert.ToDouble(elements[0]) * Convert.ToDouble(elements[1]));
+                            return Convert.ToDouble(elements[0]) * Convert.ToDouble(elements[1]);
                         }
                     }
                     else if (operation.Contains(':'))
@@ -1589,14 +1599,14 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                    return Convert.ToDouble(elements[0])
+                                           / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            / (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2))));
+                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[3]), 2)));
                                 }
                             }
                             else
@@ -1605,22 +1615,22 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))                          //Jeśli nic nie ma przed znakiem działania (.Split(...))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           / Math.Sqrt(Convert.ToDouble(elements[2])));
+                                    return Convert.ToDouble(elements[0])
+                                           / Math.Sqrt(Convert.ToDouble(elements[2]));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            / (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                              * Math.Sqrt(Convert.ToDouble(elements[2])));
                                 }
                             }
                         }
                         else if (operation.Contains('²'))
                         {
                             string[] elements = operation.Split(':', '²');
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   / Math.Pow(Convert.ToDouble(elements[1]), 2));
+                            return Convert.ToDouble(elements[0])
+                                   / Math.Pow(Convert.ToDouble(elements[1]), 2);
                         }
                         else
                         {
@@ -1631,7 +1641,7 @@ namespace Projekt
                                 elements[1] = elements[0];
                             }
 
-                            return (decimal)(Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]));
+                            return Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]);
                         }
                     }
                     else if (operation.Contains('/'))
@@ -1643,7 +1653,7 @@ namespace Projekt
                             elements[1] = elements[0];
                         }
 
-                        return (decimal)(Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]);
 
                     }
                     else if (operation.Contains('√'))
@@ -1653,12 +1663,12 @@ namespace Projekt
                             string[] elements = operation.Split('√', '²');
                             if (string.IsNullOrEmpty(elements[0]))
                             {
-                                return (decimal)Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
+                                return Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2)));
+                                return Convert.ToDouble(elements[0])
+                                       * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
                             }
                         }
                         else
@@ -1667,12 +1677,12 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[0]))
                             {
-                                return (decimal)Math.Sqrt(Convert.ToDouble(elements[1]));
+                                return Math.Sqrt(Convert.ToDouble(elements[1]));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       * Math.Sqrt(Convert.ToDouble(elements[1])));
+                                return Convert.ToDouble(elements[0])
+                                       * Math.Sqrt(Convert.ToDouble(elements[1]));
                             }
                         }
                     }
@@ -1680,7 +1690,7 @@ namespace Projekt
                     {
                         string[] elements = operation.Split('²');
 
-                        return (decimal)Math.Pow(Convert.ToDouble(elements[0]), 2);
+                        return Math.Pow(Convert.ToDouble(elements[0]), 2);
                     }
                 }
             }
@@ -1695,14 +1705,14 @@ namespace Projekt
                             string[] elements = operation.Split('+', '√', '²');
                             if (string.IsNullOrEmpty(elements[1]))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       + Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                return Convert.ToDouble(elements[0])
+                                       + Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        + (Convert.ToDouble(elements[1])
-                                          * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2))));
+                                          * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
                             }
                         }
                         else
@@ -1711,21 +1721,21 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[1]))                          //Jeśli nic nie ma przed znakiem działania (.Split(...))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       + Math.Sqrt(Convert.ToDouble(elements[2])));
+                                return Convert.ToDouble(elements[0])
+                                       + Math.Sqrt(Convert.ToDouble(elements[2]));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        + (Convert.ToDouble(elements[1])
-                                          * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                          * Math.Sqrt(Convert.ToDouble(elements[2])));
                             }
                         }
                     }
                     else if (operation.Contains('²'))
                     {
                         string[] elements = operation.Split('+', '²');
-                        return (decimal)(Convert.ToDouble(elements[0]) + Math.Pow(Convert.ToDouble(elements[1]), 2));
+                        return Convert.ToDouble(elements[0]) + Math.Pow(Convert.ToDouble(elements[1]), 2);
                     }
                     else
                     {
@@ -1736,7 +1746,7 @@ namespace Projekt
                             elements[1] = elements[0];
                         }
 
-                        return (decimal)(Convert.ToDouble(elements[0]) + Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0]) + Convert.ToDouble(elements[1]);
                     } // działa tak tlko gdy wymusimy postawienie plusa przy liczbie z minusem, blokuje to funkcja if(Contains operation) to oblicz bezzastanowienia xD
                 }
 
@@ -1751,7 +1761,7 @@ namespace Projekt
 
                     string firstNum = string.Join("-", elements.Take(2));
 
-                    return (decimal)(Convert.ToDouble(firstNum) - Convert.ToDouble(elements[2]));
+                    return Convert.ToDouble(firstNum) - Convert.ToDouble(elements[2]);
                 }
 
                 else if (operation.Contains('*'))
@@ -1763,14 +1773,14 @@ namespace Projekt
                             string[] elements = operation.Split('*', '√', '²');
                             if (string.IsNullOrEmpty(elements[1]))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                return Convert.ToDouble(elements[0])
+                                       * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        * (Convert.ToDouble(elements[1])
-                                          * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2))));
+                                          * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
                             }
                         }
                         else
@@ -1779,21 +1789,21 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[1]))                          //Jeśli nic nie ma przed znakiem działania (.Split(...))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       * Math.Sqrt(Convert.ToDouble(elements[2])));
+                                return Convert.ToDouble(elements[0])
+                                       * Math.Sqrt(Convert.ToDouble(elements[2]));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        * (Convert.ToDouble(elements[1])
-                                          * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                          * Math.Sqrt(Convert.ToDouble(elements[2])));
                             }
                         }
                     }
                     else if (operation.Contains('²'))
                     {
                         string[] elements = operation.Split('*', '²');
-                        return (decimal)(Convert.ToDouble(elements[0]) * Math.Pow(Convert.ToDouble(elements[1]), 2));
+                        return Convert.ToDouble(elements[0]) * Math.Pow(Convert.ToDouble(elements[1]), 2);
                     }
                     else
                     {
@@ -1804,7 +1814,7 @@ namespace Projekt
                             elements[1] = elements[0];
                         }
 
-                        return (decimal)(Convert.ToDouble(elements[0]) * Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0]) * Convert.ToDouble(elements[1]);
                     }
                 }
 
@@ -1817,14 +1827,14 @@ namespace Projekt
                             string[] elements = operation.Split(':', '√', '²');
                             if (string.IsNullOrEmpty(elements[1]))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                return Convert.ToDouble(elements[0])
+                                       / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        / (Convert.ToDouble(elements[1])
-                                          / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2))));
+                                          / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
                             }
                         }
                         else
@@ -1833,21 +1843,21 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[1]))                          //Jeśli nic nie ma przed znakiem działania (.Split(...))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       / Math.Sqrt(Convert.ToDouble(elements[2])));
+                                return Convert.ToDouble(elements[0])
+                                       / Math.Sqrt(Convert.ToDouble(elements[2]));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        / (Convert.ToDouble(elements[1])
-                                          / Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                          / Math.Sqrt(Convert.ToDouble(elements[2])));
                             }
                         }
                     }
                     else if (operation.Contains('²'))
                     {
                         string[] elements = operation.Split(':', '²');
-                        return (decimal)(Convert.ToDouble(elements[0]) / Math.Pow(Convert.ToDouble(elements[1]), 2));
+                        return Convert.ToDouble(elements[0]) / Math.Pow(Convert.ToDouble(elements[1]), 2);
                     }
                     else
                     {
@@ -1858,7 +1868,7 @@ namespace Projekt
                             elements[1] = elements[0];
                         }
 
-                        return (decimal)(Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]);
                     }
                 }
 
@@ -1871,7 +1881,7 @@ namespace Projekt
                         elements[1] = elements[0];
                     }
 
-                    return (decimal)(Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]));
+                    return Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]);
 
                 }
 
@@ -1882,12 +1892,12 @@ namespace Projekt
                         string[] elements = operation.Split('√', '²');
                         if (string.IsNullOrEmpty(elements[0]))
                         {
-                            return (decimal)Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
+                            return Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
                         }
                         else
                         {
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2)));
+                            return Convert.ToDouble(elements[0])
+                                   * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
                         }
                     }
                     else
@@ -1896,11 +1906,11 @@ namespace Projekt
 
                         if (string.IsNullOrEmpty(elements[0]))
                         {
-                            return (decimal)Math.Sqrt(Convert.ToDouble(elements[1]));
+                            return Math.Sqrt(Convert.ToDouble(elements[1]));
                         }
                         else if (elements[0] == "-")
                         {
-                            return (decimal)(-1 * Math.Sqrt(Convert.ToDouble(elements[1])));
+                            return -1 * Math.Sqrt(Convert.ToDouble(elements[1]));
                         }
                         else if (string.IsNullOrEmpty(elements[1]))
                         {
@@ -1908,8 +1918,8 @@ namespace Projekt
                         }
                         else
                         {
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   * Math.Sqrt(Convert.ToDouble(elements[1])));
+                            return Convert.ToDouble(elements[0])
+                                   * Math.Sqrt(Convert.ToDouble(elements[1]));
                         }
                     }
                 }
@@ -1918,7 +1928,7 @@ namespace Projekt
                 {
                     string[] elements = operation.Split('²');
 
-                    return (decimal)Math.Pow(Convert.ToDouble(elements[0]), 2);
+                    return Math.Pow(Convert.ToDouble(elements[0]), 2);
                 }
             }
             else
@@ -1932,14 +1942,14 @@ namespace Projekt
                             string[] elements = operation.Split('+', '√', '²');
                             if (string.IsNullOrEmpty(elements[1]))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       + Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                return Convert.ToDouble(elements[0])
+                                       + Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        + (Convert.ToDouble(elements[1])
-                                          * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2))));
+                                          * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
                             }
                         }
                         else
@@ -1948,21 +1958,21 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[1]))                          //Jeśli nic nie ma przed znakiem działania (.Split(...))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       + Math.Sqrt(Convert.ToDouble(elements[2])));
+                                return Convert.ToDouble(elements[0])
+                                       + Math.Sqrt(Convert.ToDouble(elements[2]));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        + (Convert.ToDouble(elements[1])
-                                          * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                          * Math.Sqrt(Convert.ToDouble(elements[2])));
                             }
                         }
                     }
                     else if (operation.Contains('²'))
                     {
                         string[] elements = operation.Split('+', '²');
-                        return (decimal)(Convert.ToDouble(elements[0]) + Math.Pow(Convert.ToDouble(elements[1]), 2));
+                        return Convert.ToDouble(elements[0]) + Math.Pow(Convert.ToDouble(elements[1]), 2);
                     }
                     else
                     {
@@ -1973,7 +1983,7 @@ namespace Projekt
                             elements[1] = elements[0];
                         }
 
-                        return (decimal)(Convert.ToDouble(elements[0]) + Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0]) + Convert.ToDouble(elements[1]);
                     }
                 }
 
@@ -1985,8 +1995,8 @@ namespace Projekt
 
                         elements[0] = "0";
 
-                        return (decimal)(Convert.ToDouble(elements[0])
-                                   - Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0])
+                                   - Convert.ToDouble(elements[1]);
                     }
                     else
                     {
@@ -1997,14 +2007,14 @@ namespace Projekt
                                 string[] elements = operation.Split('-', '√', '²');
                                 if (string.IsNullOrEmpty(elements[1]))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           - Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                    return Convert.ToDouble(elements[0])
+                                           - Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            - (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2))));
+                                              * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
                                 }
                             }
                             else
@@ -2013,22 +2023,22 @@ namespace Projekt
 
                                 if (string.IsNullOrEmpty(elements[1]))                          //Jeśli nic nie ma przed znakiem działania (.Split(...))
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
-                                           - Math.Sqrt(Convert.ToDouble(elements[2])));
+                                    return Convert.ToDouble(elements[0])
+                                           - Math.Sqrt(Convert.ToDouble(elements[2]));
                                 }
                                 else
                                 {
-                                    return (decimal)(Convert.ToDouble(elements[0])
+                                    return Convert.ToDouble(elements[0])
                                            - (Convert.ToDouble(elements[1])
-                                              * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                              * Math.Sqrt(Convert.ToDouble(elements[2])));
                                 }
                             }
                         }
                         else if (operation.Contains('²'))
                         {
                             string[] elements = operation.Split('-', '²');
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   - Math.Pow(Convert.ToDouble(elements[1]), 2));
+                            return Convert.ToDouble(elements[0])
+                                   - Math.Pow(Convert.ToDouble(elements[1]), 2);
                         }
                         else if (operation.Contains("/-") && !operation.StartsWith("-"))
                         {
@@ -2036,10 +2046,10 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[2]))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0]) / 0);
+                                return Convert.ToDouble(elements[0]) / 0;
                             }
 
-                            return (decimal)((Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[2])) * -1);
+                            return (Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[2])) * -1;
                         }
                         else
                         {
@@ -2050,8 +2060,8 @@ namespace Projekt
                                 elements[1] = elements[0];
                             }
 
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   - Convert.ToDouble(elements[1]));
+                            return Convert.ToDouble(elements[0])
+                                   - Convert.ToDouble(elements[1]);
                         }
                     }
                 }
@@ -2065,14 +2075,14 @@ namespace Projekt
                             string[] elements = operation.Split('*', '√', '²');
                             if (string.IsNullOrEmpty(elements[1]))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                return Convert.ToDouble(elements[0])
+                                       * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        * (Convert.ToDouble(elements[1])
-                                          * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2))));
+                                          * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
                             }
                         }
                         else
@@ -2081,21 +2091,21 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[1]))                          //Jeśli nic nie ma przed znakiem działania (.Split(...))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       * Math.Sqrt(Convert.ToDouble(elements[2])));
+                                return Convert.ToDouble(elements[0])
+                                       * Math.Sqrt(Convert.ToDouble(elements[2]));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        * (Convert.ToDouble(elements[1])
-                                          * Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                          * Math.Sqrt(Convert.ToDouble(elements[2])));
                             }
                         }
                     }
                     else if (operation.Contains('²'))
                     {
                         string[] elements = operation.Split('*', '²');
-                        return (decimal)(Convert.ToDouble(elements[0]) * Math.Pow(Convert.ToDouble(elements[1]), 2));
+                        return Convert.ToDouble(elements[0]) * Math.Pow(Convert.ToDouble(elements[1]), 2);
                     }
                     else
                     {
@@ -2106,7 +2116,7 @@ namespace Projekt
                             elements[1] = elements[0];
                         }
 
-                        return (decimal)(Convert.ToDouble(elements[0]) * Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0]) * Convert.ToDouble(elements[1]);
                     }
                 }
 
@@ -2119,14 +2129,14 @@ namespace Projekt
                             string[] elements = operation.Split(':', '√', '²');
                             if (string.IsNullOrEmpty(elements[1]))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
+                                return Convert.ToDouble(elements[0])
+                                       / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        / (Convert.ToDouble(elements[1])
-                                          / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2))));
+                                          / Math.Sqrt(Math.Pow(Convert.ToDouble(elements[2]), 2)));
                             }
                         }
                         else
@@ -2135,21 +2145,21 @@ namespace Projekt
 
                             if (string.IsNullOrEmpty(elements[1]))                          //Jeśli nic nie ma przed znakiem działania (.Split(...))
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
-                                       / Math.Sqrt(Convert.ToDouble(elements[2])));
+                                return Convert.ToDouble(elements[0])
+                                       / Math.Sqrt(Convert.ToDouble(elements[2]));
                             }
                             else
                             {
-                                return (decimal)(Convert.ToDouble(elements[0])
+                                return Convert.ToDouble(elements[0])
                                        / (Convert.ToDouble(elements[1])
-                                          / Math.Sqrt(Convert.ToDouble(elements[2]))));
+                                          / Math.Sqrt(Convert.ToDouble(elements[2])));
                             }
                         }
                     }
                     else if (operation.Contains('²'))
                     {
                         string[] elements = operation.Split(':', '²');
-                        return (decimal)(Convert.ToDouble(elements[0]) / Math.Pow(Convert.ToDouble(elements[1]), 2));
+                        return Convert.ToDouble(elements[0]) / Math.Pow(Convert.ToDouble(elements[1]), 2);
                     }
                     else
                     {
@@ -2160,7 +2170,7 @@ namespace Projekt
                             elements[1] = elements[0];
                         }
 
-                        return (decimal)(Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]);
                     }
                 }
 
@@ -2170,7 +2180,7 @@ namespace Projekt
                     {
                         string[] elements = operation.Split('/', '²');
 
-                        return (decimal)(Convert.ToDouble(elements[0]) / (Math.Pow(Convert.ToDouble(elements[1]), 2)));
+                        return Convert.ToDouble(elements[0]) / (Math.Pow(Convert.ToDouble(elements[1]), 2));
                     }
                     else
                     {
@@ -2181,7 +2191,7 @@ namespace Projekt
                             elements[1] = elements[0];
                         }
 
-                        return (decimal)(Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]));
+                        return Convert.ToDouble(elements[0]) / Convert.ToDouble(elements[1]);
                     }
                 }
 
@@ -2192,12 +2202,12 @@ namespace Projekt
                         string[] elements = operation.Split('√', '²');
                         if (string.IsNullOrEmpty(elements[0]))
                         {
-                            return (decimal)Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
+                            return Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
                         }
                         else
                         {
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2)));
+                            return Convert.ToDouble(elements[0])
+                                   * Math.Sqrt(Math.Pow(Convert.ToDouble(elements[1]), 2));
                         }
                     }
                     else
@@ -2206,7 +2216,7 @@ namespace Projekt
 
                         if (string.IsNullOrEmpty(elements[0]))
                         {
-                            return (decimal)Math.Sqrt(Convert.ToDouble(elements[1]));
+                            return Math.Sqrt(Convert.ToDouble(elements[1]));
                         }
                         else if (string.IsNullOrEmpty(elements[1]))
                         {
@@ -2214,8 +2224,8 @@ namespace Projekt
                         }
                         else
                         {
-                            return (decimal)(Convert.ToDouble(elements[0])
-                                   * Math.Sqrt(Convert.ToDouble(elements[1])));
+                            return Convert.ToDouble(elements[0])
+                                   * Math.Sqrt(Convert.ToDouble(elements[1]));
                         }
                     }
                 }
@@ -2224,7 +2234,7 @@ namespace Projekt
                 {
                     string[] elements = operation.Split('²');
 
-                    return (decimal)Math.Pow(Convert.ToDouble(elements[0]), 2);
+                    return Math.Pow(Convert.ToDouble(elements[0]), 2);
                 }
 
             }
