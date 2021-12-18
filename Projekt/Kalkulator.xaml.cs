@@ -729,20 +729,24 @@ namespace Projekt
                 ResultText.Text = wpiszLiczbe;
             }
             else if (CurrentOperationText.Text.Contains("/")) { }
-            else if (CurrentOperationText.Text.Contains("√")) { }
+            else if (CurrentOperationText.Text.Contains("√"))
+            {
+                //ResultText.Text = CalculateResult(operation).ToString();
+                //CurrentOperationText.Text = string.Empty;
+            }
             else if (CurrentOperationText.Text.EndsWith("²")) { }
             else if (operation.Contains("E+") || operation.Contains("E-"))
             {
                 if (CzyNieMaZnakow(operation))
                 {
-                    CurrentOperationText.Text += '√';
+                    CurrentOperationText.Text = "√" + CurrentOperationText.Text;
                 }
                 else if (CzyMaZnaki(operation))
                 {
                     if (operation.Contains('√')) { }
                     else
                     {
-                        CurrentOperationText.Text += '√';
+                        CurrentOperationText.Text = "√" + CurrentOperationText.Text;
                     }
                 }
             }
@@ -760,7 +764,7 @@ namespace Projekt
             }
             else
             {
-                CurrentOperationText.Text += "√";
+                CurrentOperationText.Text = "√" + CurrentOperationText.Text;//może
             }
         }
         private void Button_ClickPotega(object sender, RoutedEventArgs e)
