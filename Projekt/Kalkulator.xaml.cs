@@ -18,9 +18,9 @@ namespace Projekt
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Calculator : Window
     {
-        public MainWindow()
+        public Calculator()
         {
             InitializeComponent();
         }
