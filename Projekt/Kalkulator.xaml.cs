@@ -428,6 +428,7 @@ namespace Projekt
         private void Button_ClickDodawanie(object sender, RoutedEventArgs e)
         {
             string operation = CurrentOperationText.Text;
+            string obliczIWpisz = CalculateResult(operation).ToString("G15");
 
             if (operation.ToString() == "-") { }
             else if (operation.EndsWith("/-"))
@@ -440,8 +441,8 @@ namespace Projekt
             }
             else if (operation.StartsWith("√") && operation.Contains('E'))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString() + '+';
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz + '+';
             }
             else if (EndsWithOperation(operation))//zamienia z + na inne działanie
             {
@@ -452,8 +453,9 @@ namespace Projekt
             else if (CurrentOperationText.Text.EndsWith("√") || CurrentOperationText.Text.EndsWith("E")) { }
             else if (CurrentOperationText.Text.Contains("²"))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString() + '+';
+                
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz + '+';
             }
             else if (operation.Contains("E+") || operation.Contains("E-"))
             {
@@ -463,8 +465,8 @@ namespace Projekt
                 }
                 else if (CzyMaZnaki(operation))
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString() + '+';
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz + '+';
                 }
             }
             else if (CurrentOperationText.Text.Contains(':') && CurrentOperationText.Text.EndsWith("0") || operation.Contains('/'))
@@ -479,8 +481,8 @@ namespace Projekt
                 }
                 else
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString();
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz;
                     CurrentOperationText.Text += "+";
                 }
             }
@@ -497,6 +499,7 @@ namespace Projekt
         private void Button_ClickOdejmowanie(object sender, RoutedEventArgs e)
         {
             string operation = CurrentOperationText.Text;
+            string obliczIWpisz = CalculateResult(operation).ToString("G15");
 
             if (operation.ToString() == "-") { }
             else if (operation.EndsWith("/-"))
@@ -509,8 +512,8 @@ namespace Projekt
             }
             else if (operation.StartsWith("√") && operation.Contains('E'))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString() + '-';
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz + '-';
             }
             else if (EndsWithOperation(operation))
             {
@@ -520,8 +523,8 @@ namespace Projekt
             else if (CurrentOperationText.Text.EndsWith(",") || CurrentOperationText.Text.EndsWith("√") || CurrentOperationText.Text.EndsWith("E")) { }
             else if (CurrentOperationText.Text.Contains("²"))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString() + '-';
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz + '-';
             }
             else if (operation.Contains("E+") || operation.Contains("E-"))
             {
@@ -531,8 +534,8 @@ namespace Projekt
                 }
                 else if (CzyMaZnaki(operation))
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString() + '-';
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz + '-';
                 }
             }
             else if (CurrentOperationText.Text.Contains(":") && CurrentOperationText.Text.EndsWith("0") || operation.Contains('/'))
@@ -547,8 +550,8 @@ namespace Projekt
                 }
                 else
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString();
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz;
                     CurrentOperationText.Text += "-";
                 }
             }
@@ -572,6 +575,7 @@ namespace Projekt
         private void Button_ClickMnozenie(object sender, RoutedEventArgs e)
         {
             string operation = CurrentOperationText.Text;//było var...
+            string obliczIWpisz = CalculateResult(operation).ToString("G15");
 
             if (operation.ToString() == "-") { }
             else if (operation.EndsWith("/-"))
@@ -584,8 +588,8 @@ namespace Projekt
             }
             else if (operation.StartsWith("√") && operation.Contains('E'))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString() + '*';
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz + '*';
             }
             else if (EndsWithOperation(operation))
             {
@@ -596,8 +600,8 @@ namespace Projekt
             else if (CurrentOperationText.Text.EndsWith("√") || CurrentOperationText.Text.EndsWith("E")) { }
             else if (CurrentOperationText.Text.Contains("²"))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString() + '*';
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz + '*';
             }
             else if (operation.Contains("E+") || operation.Contains("E-"))
             {
@@ -607,8 +611,8 @@ namespace Projekt
                 }
                 else if (CzyMaZnaki(operation))
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString() + '*';
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz + '*';
                 }
             }
             else if (CurrentOperationText.Text.Contains(":") && CurrentOperationText.Text.EndsWith("0") || operation.Contains('/'))
@@ -623,8 +627,8 @@ namespace Projekt
                 }
                 else
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString();
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz;
                     CurrentOperationText.Text += "*";
                 }
             }
@@ -641,6 +645,7 @@ namespace Projekt
         private void Button_ClickDzielenie(object sender, RoutedEventArgs e)
         {
             string operation = CurrentOperationText.Text;
+            string obliczIWpisz = CalculateResult(operation).ToString("G15");
 
             if (operation.ToString() == "-") { }
             else if (operation.EndsWith("/-"))
@@ -653,8 +658,8 @@ namespace Projekt
             }
             else if (operation.StartsWith("√") && operation.Contains('E'))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString() + ':';
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz + ':';
             }
             else if (EndsWithOperation(operation))
             {
@@ -665,8 +670,8 @@ namespace Projekt
             else if (CurrentOperationText.Text.EndsWith("√") || CurrentOperationText.Text.EndsWith("E")) { }
             else if (CurrentOperationText.Text.Contains("²"))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString() + ':';
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz + ':';
             }
             else if (operation.Contains("E+") || operation.Contains("E-"))
             {
@@ -676,8 +681,8 @@ namespace Projekt
                 }
                 else if (CzyMaZnaki(operation))
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString() + ':';
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz + ':';
                 }
             }
             else if (CurrentOperationText.Text.Contains(":") && CurrentOperationText.Text.EndsWith("0") || operation.Contains('/'))
@@ -699,8 +704,8 @@ namespace Projekt
                     }
                     else
                     {
-                        ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                        CurrentOperationText.Text = CalculateResult(operation).ToString();
+                        ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                        CurrentOperationText.Text = obliczIWpisz;
                         CurrentOperationText.Text += ":";
                     }
                 }
@@ -718,6 +723,7 @@ namespace Projekt
         private void Button_ClickPierwiastek(object sender, RoutedEventArgs e)
         {
             string operation = CurrentOperationText.Text;
+            string obliczIWpisz = CalculateResult(operation).ToString("G15");
 
             if (CurrentOperationText.Text.EndsWith(",") || CurrentOperationText.Text.EndsWith("²") || CurrentOperationText.Text.EndsWith("E") || ResultText.Text.StartsWith("-")) { }
             else if (operation.EndsWith("/-"))
@@ -731,7 +737,7 @@ namespace Projekt
             else if (CurrentOperationText.Text.Contains("/")) { }
             else if (CurrentOperationText.Text.Contains("√"))
             {
-                //ResultText.Text = CalculateResult(operation).ToString();
+                //ResultText.Text = obliczIWpisz;
                 //CurrentOperationText.Text = string.Empty;
             }
             else if (CurrentOperationText.Text.EndsWith("²")) { }
@@ -770,6 +776,7 @@ namespace Projekt
         private void Button_ClickPotega(object sender, RoutedEventArgs e)
         {
             string operation = CurrentOperationText.Text;
+            string obliczIWpisz = CalculateResult(operation).ToString("G15");
 
             if (CurrentOperationText.Text.EndsWith(",") || CurrentOperationText.Text.EndsWith("√") || CurrentOperationText.Text.EndsWith("E")) { }
             else if (operation.EndsWith("/-") || operation == "1/")
@@ -783,8 +790,8 @@ namespace Projekt
             }
             else if (CurrentOperationText.Text.Contains("²"))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString();
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz;
             }
             else if (CurrentOperationText.Text.Contains("/"))
             {
@@ -808,8 +815,8 @@ namespace Projekt
                 }
                 else if (CzyMaZnaki(operation))
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString();
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz;
                 }
             }
             else if (ResultText.Text == ZeroNIE || ResultText.Text == BrakObslugi || ResultText.Text == wpiszLiczbe) { }
@@ -825,6 +832,7 @@ namespace Projekt
         private void Button_ClickUlamek(object sender, RoutedEventArgs e)
         {
             string operation = CurrentOperationText.Text;
+            string obliczIWpisz = CalculateResult(operation).ToString("G15");
 
             if (CurrentOperationText.Text.EndsWith(",") || CurrentOperationText.Text.EndsWith("√") || CurrentOperationText.Text.EndsWith("E")) { }
             else if (operation.EndsWith("/-"))
@@ -833,8 +841,8 @@ namespace Projekt
             }
             else if (operation.StartsWith("√") && operation.Contains('E'))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = "1/" + CalculateResult(operation).ToString();
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = "1/" + obliczIWpisz;
             }
             else if (operation.StartsWith("0") && operation.Contains(':'))
             {
@@ -847,8 +855,8 @@ namespace Projekt
                 }
                 else
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    ResultText.Text = CalculateResult(operation).ToString();
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    ResultText.Text = obliczIWpisz;
                     CurrentOperationText.Text = string.Empty;
                 }
             }
@@ -859,8 +867,8 @@ namespace Projekt
             }
             else if (CurrentOperationText.Text.Contains("²"))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = "1/" + CalculateResult(operation).ToString();
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = "1/" + obliczIWpisz;
             }
             else if (operation == "1/")
             {
@@ -874,22 +882,22 @@ namespace Projekt
                 }
                 else if (CzyMaZnaki(operation))
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    ResultText.Text = CalculateResult(operation).ToString();
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    ResultText.Text = obliczIWpisz;
                     CurrentOperationText.Text = string.Empty;
                 }
             }
             else if (operation.Contains(':') && CurrentOperationText.Text.EndsWith("0") || operation.Contains('/'))
             {
                 SprawdzCzyNieZero(operation);
-                //CurrentOperationText.Text = "1/" + CalculateResult(operation).ToString();  // nie wiem czemu to dodałem
+                //CurrentOperationText.Text = "1/" + obliczIWpisz;  // nie wiem czemu to dodałem
             }
             else if (ContainsOperation(operation) || CurrentOperationText.Text.Contains('-'))
             {
                 if (Regex.Matches(operation, "[-]").Count == 2 || (operation.StartsWith("-") && ContainsOperation(operation)))
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString();
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz;
                     CurrentOperationText.Text = "1/" + CurrentOperationText.Text;
                 }
                 else if (operation.StartsWith("-"))
@@ -898,8 +906,8 @@ namespace Projekt
                 }
                 else
                 {
-                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                    CurrentOperationText.Text = CalculateResult(operation).ToString();
+                    ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                    CurrentOperationText.Text = obliczIWpisz;
                     CurrentOperationText.Text = "1/" + CurrentOperationText.Text;
                 }
             }
@@ -910,8 +918,8 @@ namespace Projekt
             }
             else if (CurrentOperationText.Text.Contains("/") && CurrentOperationText.Text.EndsWith("/"))
             {
-                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + CalculateResult(operation).ToString());
-                CurrentOperationText.Text = CalculateResult(operation).ToString();
+                ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + obliczIWpisz);
+                CurrentOperationText.Text = obliczIWpisz;
                 CurrentOperationText.Text = "1/" + CurrentOperationText.Text;
             }
             else if (CurrentOperationText.Text.EndsWith("/")) { }
@@ -927,6 +935,7 @@ namespace Projekt
         private void Button_ClickWynik(object sender, RoutedEventArgs e)
         {
             string operation = CurrentOperationText.Text;
+            string obliczIWpisz = CalculateResult(operation).ToString("G15");
             double arg2 = 0;
             bool canConvert = double.TryParse(operation, out arg2);
 
@@ -948,7 +957,7 @@ namespace Projekt
             else if (operation.EndsWith("/-")) { }
             else if (CurrentOperationText.Text.Contains("²"))
             {
-                ResultText.Text = CalculateResult(operation).ToString();
+                ResultText.Text = obliczIWpisz;
                 ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + ResultText.Text);
                 CurrentOperationText.Text = string.Empty;
             }
@@ -963,7 +972,7 @@ namespace Projekt
                 }
                 else
                 {
-                    ResultText.Text = CalculateResult(operation).ToString();
+                    ResultText.Text = obliczIWpisz;
                     ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + ResultText.Text);
                     CurrentOperationText.Text = string.Empty;
                 }
@@ -1009,7 +1018,7 @@ namespace Projekt
             else if (!string.IsNullOrEmpty(ResultText.Text) && string.IsNullOrEmpty(CurrentOperationText.Text)) { }
             else
             {
-                ResultText.Text = CalculateResult(operation).ToString();
+                ResultText.Text = obliczIWpisz;
                 _ = ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + ResultText.Text);//a może by tą Listahistorii zamienić na funkcję w której łączy się z tamtym listboxem
                 //string ile = ListaHistorii.SelectedItem.ToString();
                 //setItems(wartosc.ToString);
@@ -1045,6 +1054,7 @@ namespace Projekt
             => operation.EndsWith("+") || operation.EndsWith("-") || operation.EndsWith("*") || operation.EndsWith(":");
         private void SprawdzCzyNieZero(string operation)
         {
+            string obliczIWpisz = CalculateResult(operation).ToString("G15");
             if (CurrentOperationText.Text.Contains(':'))
             {
                 string[] elements = CurrentOperationText.Text.Split(':');
@@ -1060,7 +1070,7 @@ namespace Projekt
                         }
                         else
                         {
-                            ResultText.Text = CalculateResult(operation).ToString();
+                            ResultText.Text = obliczIWpisz;
                             ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + ResultText.Text);
                             CurrentOperationText.Text = string.Empty;
                         }
@@ -1072,7 +1082,7 @@ namespace Projekt
                     }
                     else
                     {
-                        ResultText.Text = CalculateResult(operation).ToString();
+                        ResultText.Text = obliczIWpisz;
                         ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + ResultText.Text);
                         CurrentOperationText.Text = string.Empty;
                     }
@@ -1093,7 +1103,7 @@ namespace Projekt
                         }
                         else
                         {
-                            ResultText.Text = CalculateResult(operation).ToString();
+                            ResultText.Text = obliczIWpisz;
                             ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + ResultText.Text);
                             CurrentOperationText.Text = string.Empty;
                         }
@@ -1105,7 +1115,7 @@ namespace Projekt
                     }
                     else
                     {
-                        ResultText.Text = CalculateResult(operation).ToString();
+                        ResultText.Text = obliczIWpisz;
                         ListaHistorii.Items.Add(CurrentOperationText.Text + " = " + ResultText.Text);
                         CurrentOperationText.Text = string.Empty;
                     }
