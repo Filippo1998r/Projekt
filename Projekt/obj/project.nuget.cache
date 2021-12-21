@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YzLkKhp5laZl4p0LfLwvUZQbxGz1jhV5hICoQ0zFH2hPEVdiop93iyCgAZx/n1rMeAI6EC+Pl1gJ0AxckGD7qg==",
+  "dgSpecHash": "UpiCDpEPGeibYsv9CeZHWdpZPt/OUWyP8TUIIQLVzxPF3FU6esDSe6IX+cHyJspsN2Dsjj5VuLMSVjqaIUHyVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Filippo\\source\\repos\\Projekt\\Projekt\\Projekt.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Filippo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\Filippo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []
 }

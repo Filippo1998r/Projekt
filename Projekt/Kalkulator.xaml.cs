@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
+using System.Windows;
+using static Projekt.WykresyFunkcji;
 
 namespace Projekt
 {
@@ -16,6 +17,7 @@ namespace Projekt
         private const string ZeroNIE = "Nie można dzielić przez ZERO!!!";
         private const string wpiszLiczbe = "Proszę wpisz liczbę!!!";
         private const string BrakObslugi = "NIESTETY!!! Takie działanie nie jest obsługiwane!";
+
         public Calculator()
         {
             InitializeComponent();
@@ -27,6 +29,15 @@ namespace Projekt
             nlBE.NumberFormat.CurrencyDecimalSeparator = ",";/////////////W Polsce nie tolerujemy kropek. Tylko przecinki. Koniec kropka.
             nlBE.NumberFormat.CurrencyGroupSeparator = ".";///////////////
             System.Threading.Thread.CurrentThread.CurrentCulture = nlBE;//
+        }
+        private void Click_Wykresy(object sender, RoutedEventArgs e)
+        {
+            NavigationWindow window = new NavigationWindow
+            {
+                Source = new Uri("WykresyFunkcji.xaml", UriKind.Relative)
+            };
+            window.Show();
+            this.Visibility = Visibility.Hidden;
         }
 
         private void ListaHistorii_Click(object sender, RoutedEventArgs e)
@@ -42,7 +53,9 @@ namespace Projekt
             if (ListaHistorii.SelectedItem == null) { }
             else
             {
+#pragma warning disable CS8600 // Konwertowanie literału o wartości null lub możliwej wartości null na nienullowalny typ.
                 string dzialanie = ListaHistorii.SelectedItem.ToString();
+#pragma warning restore CS8600 // Konwertowanie literału o wartości null lub możliwej wartości null na nienullowalny typ.
 
                 string[] elements = dzialanie.Split('=');
 
@@ -69,7 +82,9 @@ namespace Projekt
         {
             ResultText.Text = string.Empty;
 
+#pragma warning disable CS8600 // Konwertowanie literału o wartości null lub możliwej wartości null na nienullowalny typ.
             Button button = sender as Button;
+#pragma warning restore CS8600 // Konwertowanie literału o wartości null lub możliwej wartości null na nienullowalny typ.
 
             object currentNumber = button.Content;
 

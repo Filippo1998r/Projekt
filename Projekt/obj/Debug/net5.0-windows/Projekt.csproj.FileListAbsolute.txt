@@ -20,3 +20,5 @@ C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\Projekt.d
 C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\ref\Projekt.dll
 C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\Projekt.pdb
 C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\Projekt.genruntimeconfig.cache
+C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\WykresyFunkcji.g.cs
+C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\WykresyFunkcji.baml
