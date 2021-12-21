@@ -10,8 +10,24 @@
 
 
     <StackPanel x:Name="Okno">
-        <TextBlock x:Name="ResultText" FontFamily="Cavolini" FontSize="20" MouseLeftButtonUp="ResultText_Kopiuj"/>
-        <TextBlock x:Name="CurrentOperationText" FontFamily="Cavolini" FontSize="20"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="629" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Menu IsEnabled="True" Background="Black" Foreground="White" FontWeight="Bold" Height="49" Width="153" Margin="0,2,0,0" HorizontalAlignment="left" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                <MenuItem Header="Kalkulator" FontFamily="Cavolini" FontSize="20" Height="49" Width="153" Padding="20,0,0,0" BorderBrush="Black" BorderThickness="2">
+                    <MenuItem x:Name="wykresy" Header="Wykresy" Background="Black" Foreground="White" BorderBrush="Black" BorderThickness="2"/>
+                    <MenuItem x:Name="waluty" Header="Waluty" Background="Black" Foreground="White" BorderBrush="Black" BorderThickness="2"/>
+                </MenuItem>
+            </Menu>
+            <TextBlock x:Name="ResultText" FontFamily="Cavolini" FontSize="20" MouseLeftButtonUp="ResultText_Kopiuj" Width="700" HorizontalAlignment="left" Grid.Row="0" Grid.Column="0"/>
+            <TextBlock x:Name="CurrentOperationText" FontFamily="Cavolini" FontSize="20" Width="700" HorizontalAlignment="left" Grid.Row="1" Grid.Column="0"/>
+        </Grid>
         <Grid>
 
             <Grid.ColumnDefinitions>
@@ -38,20 +54,23 @@
             <Button x:Name="Button7" Click="Button_Click" Grid.Row="2" Grid.Column="0" Height="72" Content="7" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="Button8" Click="Button_Click" Grid.Row="2" Grid.Column="1" Height="72" Content="8" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="Button9" Click="Button_Click" Grid.Row="2" Grid.Column="2" Height="72" Content="9" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
-            <Button x:Name="ButtonPrzecinek" Click="Button_Click" Grid.Row="2" Grid.Column="3" Height="72" Content="," FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
+            <Button x:Name="ButtonPrzecinek" Click="Button_Click" Grid.Row="3" Grid.Column="2" Height="72" Content="," FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
+
             <Button x:Name="ButtonDodawanie" Click="Button_ClickDodawanie" Grid.Row="0" Grid.Column="3" Height="72" Content="+" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Gray" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="ButtonOdejmowanie" Click="Button_ClickOdejmowanie" Grid.Row="0" Grid.Column="4" Height="72" Content="-" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Gray" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="ButtonMnozenie" Click="Button_ClickMnozenie" Grid.Row="1" Grid.Column="3" Height="72" Content="*" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Gray" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="ButtonDzielenie" Click="Button_ClickDzielenie" Grid.Row="1" Grid.Column="4" Height="72" Content=":" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Gray" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
-            <Button x:Name="ButtonWynik" Click="Button_ClickWynik" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Height="72" Content="=" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
-            <Button x:Name="Button0" Click="Button_Click" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Height="72" Content="0" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="White" Foreground="black" BorderThickness="0,0,0,4" BorderBrush="black"/>
-            <Button x:Name="ButtonPierwiastek" Click="Button_ClickPierwiastek" Grid.Row="3" Grid.Column="2" Height="72" Content="√" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Gray" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
+            <Button x:Name="ButtonPierwiastek" Click="Button_ClickPierwiastek" Grid.Row="2" Grid.Column="4" Height="72" Content="√" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Gray" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="ButtonPotega" Click="Button_ClickPotega" Grid.Row="3" Grid.Column="3" Height="72" Content="x²" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Gray" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="ButtonUlamek" Click="Button_ClickUlamek" Grid.Row="3" Grid.Column="4" Height="72" Content="1/x" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Gray" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
-            <Button x:Name="ButtonCofaj" Click="Button_Cofaj" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Height="72" Content="DEL" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
-            <Button x:Name="ButtonCzysc" Click="Button_ClickCzysc" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1" Height="72" Content="C" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
-            <Button x:Name="ButtonCzyscHistorie" Click="Button_ClickCzyscHistorie" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="1" Height="72" Content="Clear History" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
-            <ToggleButton Name="PCheckBox"  Grid.Row="4" Grid.Column="4" Content="History" FontFamily="Cavolini" FontSize="20" Background="White" Foreground="black"/>
+
+            <Button x:Name="ButtonWynik" Click="Button_ClickWynik" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1" Height="72" Content="=" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
+            <Button x:Name="Button0" Click="Button_Click" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Height="72" Content="0" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="White" Foreground="black" BorderThickness="0,0,0,4" BorderBrush="black"/>
+
+            <Button x:Name="ButtonCofaj" Click="Button_Cofaj" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Height="72" Content="DEL" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Red" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
+            <Button x:Name="ButtonCzysc" Click="Button_ClickCzysc" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1" Height="72" Content="C" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Red" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
+            <Button x:Name="ButtonCzyscHistorie" Click="Button_ClickCzyscHistorie" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="1" Height="72" Content="Clear History" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Red" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
+            <ToggleButton x:Name="PCheckBox"  Grid.Row="4" Grid.Column="4" Content="History" FontFamily="Cavolini" FontSize="20" Background="White" Foreground="black"/>
             <Popup x:Name="popup"  IsOpen="{Binding IsChecked, ElementName=PCheckBox}" PlacementTarget="{Binding ElementName=Okno}" Placement = "Left" AllowsTransparency="True" Width="350" Height="411" StaysOpen="False">
                 <Canvas>
 
@@ -76,10 +95,8 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
 
-                            <TextBlock TextWrapping="Wrap" Background="White" Foreground="Black" FontFamily="Cavolini" FontSize="20">
-                                History:
-                            </TextBlock>
-                            <ListBox Name="ListaHistorii" Grid.ColumnSpan="2" Margin="0,30,0,0" BorderBrush="white" FontFamily="Cavolini" PreviewMouseLeftButtonUp="ListaHistorii_Click" SelectionMode="Single" Height="400"/>
+                            <TextBlock TextWrapping="Wrap" Background="White" Foreground="Black" FontFamily="Cavolini" FontSize="20"><Run Text="History:"/></TextBlock>
+                            <ListBox x:Name="ListaHistorii" Grid.ColumnSpan="2" Margin="0,30,0,0" BorderBrush="white" FontFamily="Cavolini" PreviewMouseLeftButtonUp="ListaHistorii_Click" SelectionMode="Single" Height="400"/>
                         </Grid>
 
                     </ScrollViewer>
@@ -115,6 +132,6 @@
                 </Canvas>
             </Popup>
         </Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"></StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
     </StackPanel>
 </Window>
