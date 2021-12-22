@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "UpiCDpEPGeibYsv9CeZHWdpZPt/OUWyP8TUIIQLVzxPF3FU6esDSe6IX+cHyJspsN2Dsjj5VuLMSVjqaIUHyVw==",
+  "dgSpecHash": "FlbkLKTz0hTzU3mWP7w2waWSPr2HNfEzABLX6T4CEXFK4Va3FYAN5MwzYlqHIJbWlz5lKtMA5niOW3f3iKmSUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Filippo\\source\\repos\\Projekt\\Projekt\\Projekt.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Filippo\\.nuget\\packages\\msbuilder.ci\\0.1.2\\msbuilder.ci.0.1.2.nupkg.sha512",
+    "C:\\Users\\Filippo\\.nuget\\packages\\nuget.frameworks\\6.0.0\\nuget.frameworks.6.0.0.nupkg.sha512",
+    "C:\\Users\\Filippo\\.nuget\\packages\\oxyplot.core\\2.1.0\\oxyplot.core.2.1.0.nupkg.sha512",
+    "C:\\Users\\Filippo\\.nuget\\packages\\oxyplot.wpf\\2.1.0\\oxyplot.wpf.2.1.0.nupkg.sha512",
+    "C:\\Users\\Filippo\\.nuget\\packages\\oxyplot.wpf.shared\\2.1.0\\oxyplot.wpf.shared.2.1.0.nupkg.sha512",
     "C:\\Users\\Filippo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []

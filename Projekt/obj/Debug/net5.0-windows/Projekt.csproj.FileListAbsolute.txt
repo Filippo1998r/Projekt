@@ -22,3 +22,7 @@ C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\Projekt.p
 C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\Projekt.genruntimeconfig.cache
 C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\WykresyFunkcji.g.cs
 C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\WykresyFunkcji.baml
+C:\Users\Filippo\source\repos\Projekt\Projekt\bin\Debug\net5.0-windows\OxyPlot.dll
+C:\Users\Filippo\source\repos\Projekt\Projekt\bin\Debug\net5.0-windows\OxyPlot.Wpf.dll
+C:\Users\Filippo\source\repos\Projekt\Projekt\bin\Debug\net5.0-windows\OxyPlot.Wpf.Shared.dll
+C:\Users\Filippo\source\repos\Projekt\Projekt\obj\Debug\net5.0-windows\Projekt.csproj.CopyComplete

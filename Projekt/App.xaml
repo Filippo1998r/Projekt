@@ -1,6 +1,7 @@
 ﻿<Application x:Class="Projekt.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:oxy="http://oxyplot.codeplex.com"
              xmlns:local="clr-namespace:Projekt"
              StartupUri="Kalkulator.xaml">
     <Application.Resources>
