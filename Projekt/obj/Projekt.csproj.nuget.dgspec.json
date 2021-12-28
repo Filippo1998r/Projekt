@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Filippo\\source\\repos\\Projekt\\Projekt\\Projekt.csproj": {}
+    "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Filippo\\source\\repos\\Projekt\\Projekt\\Projekt.csproj": {
+    "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Filippo\\source\\repos\\Projekt\\Projekt\\Projekt.csproj",
+        "projectUniqueName": "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj",
         "projectName": "Projekt",
-        "projectPath": "C:\\Users\\Filippo\\source\\repos\\Projekt\\Projekt\\Projekt.csproj",
+        "projectPath": "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj",
         "packagesPath": "C:\\Users\\Filippo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Filippo\\source\\repos\\Projekt\\Projekt\\obj\\",
+        "outputPath": "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -23,15 +23,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0-windows8.0"
+          "net5.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0-windows8.0": {
-            "targetAlias": "net5.0-windows8.0",
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows7.0",
             "projectReferences": {}
           }
         },
@@ -42,8 +42,8 @@
         }
       },
       "frameworks": {
-        "net5.0-windows8.0": {
-          "targetAlias": "net5.0-windows8.0",
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows7.0",
           "dependencies": {
             "MSBuilder.CI": {
               "target": "Package",

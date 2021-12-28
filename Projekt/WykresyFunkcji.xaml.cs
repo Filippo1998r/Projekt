@@ -15,8 +15,6 @@ using System.Text.RegularExpressions;
 
 namespace Projekt
 {
-    using System.Collections.Generic;
-    using OxyPlot;
     /// <summary>
     /// Logika interakcji dla klasy WykresyFunkcji.xaml
     /// </summary>
@@ -46,7 +44,9 @@ namespace Projekt
         {
             //ResultText.Text = string.Empty;
 
+#pragma warning disable CS8600 // Konwertowanie literału o wartości null lub możliwej wartości null na nienullowalny typ.
             Button button = sender as Button;
+#pragma warning restore CS8600 // Konwertowanie literału o wartości null lub możliwej wartości null na nienullowalny typ.
 
             object currentNumber = button.Content;
 

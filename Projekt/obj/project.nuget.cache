@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FlbkLKTz0hTzU3mWP7w2waWSPr2HNfEzABLX6T4CEXFK4Va3FYAN5MwzYlqHIJbWlz5lKtMA5niOW3f3iKmSUA==",
+  "dgSpecHash": "Uxo03d6saabimahselZdVuW/6ZxqtX+eoeqEp0g4xuyOcpy8rDpZ/Cvf8a1TQdseQLyZiqSO6NmC1YXqnn6Hlg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Filippo\\source\\repos\\Projekt\\Projekt\\Projekt.csproj",
+  "projectFilePath": "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Filippo\\.nuget\\packages\\msbuilder.ci\\0.1.2\\msbuilder.ci.0.1.2.nupkg.sha512",
     "C:\\Users\\Filippo\\.nuget\\packages\\nuget.frameworks\\6.0.0\\nuget.frameworks.6.0.0.nupkg.sha512",

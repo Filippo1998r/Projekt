@@ -3,14 +3,18 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:oxy="http://oxyplot.codeplex.com"
+      xmlns:oxy="http://oxyplot.org/wpf"
       xmlns:local="clr-namespace:Projekt"
       mc:Ignorable="d" 
-      WindowHeight="450" WindowWidth="800"
+      WindowHeight="480" WindowWidth="800"
       Title="WykresyFunkcji"
       ShowsNavigationUI="False">
 
-    <Grid Background="LightGreen">
+    <Page.DataContext>
+        <local:MainViewModel/>
+    </Page.DataContext>
+
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*" />
             <ColumnDefinition Width="3*" />
@@ -19,22 +23,33 @@
             <RowDefinition Height="3*" />
             <RowDefinition Height="7*" />
         </Grid.RowDefinitions>
-        
-        <Canvas Name="canGraph" Background="White"
+
+        <Canvas Name="canGraph" Background="Transparent"
       Width="300" Height="200"
       VerticalAlignment="Center" HorizontalAlignment="Center"
-      Grid.Column="0"/>
+      Grid.RowSpan="2"></Canvas>
+
+        <Grid Grid.RowSpan="2">
+            <oxy:PlotView Model="{Binding MyModel1}" Background="Transparent"/>
+            <oxy:PlotView Model="{Binding MyModel2}" Background="Transparent"/>
+        </Grid>
+        
+        
+        
+        <!--<oxy:PlotView Model="{Binding MyModel}">
+            <oxy:PlotView.Series>
+                <oxy:LineSeries ItemsSource="{Binding Points}"/>
+            </oxy:PlotView.Series>
+        </oxy:PlotView>-->
 
         <TextBox x:Name="CurrentOperationText" FontFamily="Cavolini" FontSize="20" Height="30" Width="150" Grid.Column="1" Grid.Row="0" Background="White"/>
         <TextBlock x:Name="ResultText" FontFamily="Cavolini" FontSize="20" Grid.Column="1" Grid.Row="0" />
-        
-        <Grid Background="Black" Grid.Column="1" Grid.Row="1">
+
+        <Grid Background="White" Grid.Column="1" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
-                <!--<ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />-->
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -53,17 +68,10 @@
             <Button x:Name="Button7" Click="Button_Click" Grid.Row="2" Grid.Column="0" Height="72" Content="7" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="Button8" Click="Button_Click" Grid.Row="2" Grid.Column="1" Height="72" Content="8" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="Button9" Click="Button_Click" Grid.Row="2" Grid.Column="2" Height="72" Content="9" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
+            <Button x:Name="NoButton1" Click="Button_Click" Grid.Row="3" Grid.Column="0" Height="72" Content="" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
+            <Button x:Name="NoButton2" Click="Button_Click" Grid.Row="3" Grid.Column="1" Height="72" Content="" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
             <Button x:Name="ButtonPrzecinek" Click="Button_Click" Grid.Row="3" Grid.Column="2" Height="72" Content="," FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="black" Foreground="White" BorderThickness="2,2,2,2" BorderBrush="White"/>
-
+            <Button x:Name="Go" Click="Button_Click" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Height="72" Content="Go!" FontFamily="Cavolini" FontSize="20" FontWeight="ExtraBold" Background="Transparent" Foreground="Black" BorderThickness="2,2,2,2" BorderBrush="White"/>
         </Grid>
-
     </Grid>
-
-    <!--<Page.Resources>
-        <oxy:Plot Title="{Binding Title}" Margin="760,689,606,228" Width="504" Height="283">
-            <oxy:Plot.Series>
-                <oxy:LineSeries ItemsSource="{Binding Points}"/>
-            </oxy:Plot.Series>
-        </oxy:Plot>
-    </Page.Resources>-->
 </Page>
