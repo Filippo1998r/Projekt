@@ -23,7 +23,7 @@
             <Menu IsEnabled="True" Background="Black" Foreground="White" FontWeight="Bold" Height="49" Width="153" Margin="0,2,0,0" HorizontalAlignment="left" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
                 <MenuItem Header="Kalkulator" FontFamily="Cavolini" FontSize="20" Height="49" Width="153" Padding="20,0,0,0" BorderBrush="Black" BorderThickness="2">
                     <MenuItem x:Name="wykresy" Header="Wykresy" Background="Black" Foreground="White" BorderBrush="Black" BorderThickness="2" Click="Click_Wykresy"/>
-                    <MenuItem x:Name="waluty" Header="Waluty" Background="Black" Foreground="White" BorderBrush="Black" BorderThickness="2"/>
+                    <!--<MenuItem x:Name="waluty" Header="Waluty" Background="Black" Foreground="White" BorderBrush="Black" BorderThickness="2"/>-->
                 </MenuItem>
             </Menu>
             <TextBlock x:Name="ResultText" FontFamily="Cavolini" FontSize="20" MouseLeftButtonUp="ResultText_Kopiuj" Width="700" HorizontalAlignment="left" Grid.Row="0" Grid.Column="0"/>

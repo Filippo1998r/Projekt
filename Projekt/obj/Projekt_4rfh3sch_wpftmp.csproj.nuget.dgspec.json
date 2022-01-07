@@ -1,0 +1,91 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj",
+        "projectName": "Projekt",
+        "projectPath": "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj",
+        "packagesPath": "C:\\Users\\Filippo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Filippo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net48",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "dependencies": {
+            "Loyc.Collections": {
+              "target": "Package",
+              "version": "[29.0.3, )"
+            },
+            "Loyc.Essentials": {
+              "target": "Package",
+              "version": "[29.0.3, )"
+            },
+            "Loyc.Math": {
+              "target": "Package",
+              "version": "[29.0.3, )"
+            },
+            "Loyc.Syntax": {
+              "target": "Package",
+              "version": "[29.0.3, )"
+            },
+            "MSBuilder.CI": {
+              "target": "Package",
+              "version": "[0.1.2, )"
+            },
+            "NuGet.Frameworks": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "OxyPlot.Core": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "OxyPlot.Wpf": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,6 @@ using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Windows;
-using static Projekt.WykresyFunkcji;
 
 namespace Projekt
 {
@@ -32,12 +31,15 @@ namespace Projekt
         }
         private void Click_Wykresy(object sender, RoutedEventArgs e)
         {
-            NavigationWindow window = new NavigationWindow
-            {
-                Source = new Uri("WykresyFunkcji.xaml", UriKind.Relative)
-            };
-            window.Show();
-            this.Visibility = Visibility.Hidden;
+            //NavigationWindow window = new NavigationWindow
+            //{
+            //    Source = new Uri("WykresyFunkcji.xaml", UriKind.Relative)
+            //};
+            //window.Show();
+            //this.Visibility = Visibility.Hidden;
+            WykresyFunkcji goWykresy = new WykresyFunkcji();
+            goWykresy.Show();
+            this.Hide();
         }
 
         private void ListaHistorii_Click(object sender, RoutedEventArgs e)

@@ -2,6 +2,67 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "Loyc.Collections/29.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Loyc.Essentials": "29.0.3",
+          "Loyc.Interfaces": "29.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Loyc.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Loyc.Collections.dll": {}
+        }
+      },
+      "Loyc.Essentials/29.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Loyc.Interfaces": "29.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Loyc.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Loyc.Essentials.dll": {}
+        }
+      },
+      "Loyc.Interfaces/29.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Loyc.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Loyc.Interfaces.dll": {}
+        }
+      },
+      "Loyc.Math/29.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Loyc.Essentials": "29.0.3",
+          "Loyc.Interfaces": "29.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Loyc.Math.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Loyc.Math.dll": {}
+        }
+      },
+      "Loyc.Syntax/29.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Loyc.Collections": "29.0.3",
+          "Loyc.Essentials": "29.0.3",
+          "Loyc.Interfaces": "29.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Loyc.Syntax.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Loyc.Syntax.dll": {}
+        }
+      },
       "MSBuilder.CI/0.1.2": {
         "type": "package",
         "build": {
@@ -60,6 +121,93 @@
     }
   },
   "libraries": {
+    "Loyc.Collections/29.0.3": {
+      "sha512": "mR0EnDCkaOEXAygMuAojf/812Jnyb8no9rlPf1z58+bHCAxhe0YfB1im3coYpCTQXXhDCvTgVdDtwmxvJcb5RA==",
+      "type": "package",
+      "path": "loyc.collections/29.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "lib/net45/Loyc.Collections.XML",
+        "lib/net45/Loyc.Collections.dll",
+        "lib/netstandard2.0/Loyc.Collections.deps.json",
+        "lib/netstandard2.0/Loyc.Collections.dll",
+        "lib/netstandard2.0/Loyc.Collections.xml",
+        "loyc.collections.29.0.3.nupkg.sha512",
+        "loyc.collections.nuspec"
+      ]
+    },
+    "Loyc.Essentials/29.0.3": {
+      "sha512": "mrwZOOYsf+aQIQDLNaV/7yHHI+idmv16+OCvfWbA4ObgcHT+6T37MnogUoBGO0GEK34eEG4Jm808s2hEr9v5GA==",
+      "type": "package",
+      "path": "loyc.essentials/29.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "lib/net45/Loyc.Essentials.dll",
+        "lib/net45/Loyc.Essentials.dll.config",
+        "lib/net45/Loyc.Essentials.xml",
+        "lib/netstandard2.0/Loyc.Essentials.deps.json",
+        "lib/netstandard2.0/Loyc.Essentials.dll",
+        "lib/netstandard2.0/Loyc.Essentials.dll.config",
+        "lib/netstandard2.0/Loyc.Essentials.xml",
+        "loyc.essentials.29.0.3.nupkg.sha512",
+        "loyc.essentials.nuspec"
+      ]
+    },
+    "Loyc.Interfaces/29.0.3": {
+      "sha512": "9U4djGTjBp/RC7zRzkkiIkylYWLPCRj/Ipv7Xnj5FHQR2JpmqzNOqrMhbcZ+fmRcLMQqSge1ujboMYiSq0oBOw==",
+      "type": "package",
+      "path": "loyc.interfaces/29.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "lib/net45/Loyc.Interfaces.dll",
+        "lib/net45/Loyc.Interfaces.xml",
+        "lib/netstandard2.0/Loyc.Interfaces.deps.json",
+        "lib/netstandard2.0/Loyc.Interfaces.dll",
+        "lib/netstandard2.0/Loyc.Interfaces.xml",
+        "loyc.interfaces.29.0.3.nupkg.sha512",
+        "loyc.interfaces.nuspec"
+      ]
+    },
+    "Loyc.Math/29.0.3": {
+      "sha512": "U4WR28rQ9LUnOVbD3UDJH3aMfgpwukcg5sgmIr2ATzO1i5/vyWDkdfRCmQ5KSIQMrPqOgnNibQQw1hcr0hbbtw==",
+      "type": "package",
+      "path": "loyc.math/29.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "lib/net45/Loyc.Math.dll",
+        "lib/net45/Loyc.Math.xml",
+        "lib/netstandard2.0/Loyc.Math.deps.json",
+        "lib/netstandard2.0/Loyc.Math.dll",
+        "lib/netstandard2.0/Loyc.Math.xml",
+        "loyc.math.29.0.3.nupkg.sha512",
+        "loyc.math.nuspec"
+      ]
+    },
+    "Loyc.Syntax/29.0.3": {
+      "sha512": "CZzVepJFZbJ9q2wu9E/z9IVxUQJPAxRu24jVpCC9mYqxju/WZqMoKNonLtQekZMwjOUY8ZnwWlQaXF2nx3czDQ==",
+      "type": "package",
+      "path": "loyc.syntax/29.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "lib/net45/Loyc.Syntax.dll",
+        "lib/net45/Loyc.Syntax.xml",
+        "lib/netstandard2.0/Loyc.Syntax.deps.json",
+        "lib/netstandard2.0/Loyc.Syntax.dll",
+        "lib/netstandard2.0/Loyc.Syntax.xml",
+        "loyc.syntax.29.0.3.nupkg.sha512",
+        "loyc.syntax.nuspec"
+      ]
+    },
     "MSBuilder.CI/0.1.2": {
       "sha512": "U/KB4wEwIlq6rvOWiB39cNixjSXwv975p0QBCcAmP+Hkgr4jCxmqA+BOvoxNUUeQD4wDqEC6jFnGhGWyHEisDA==",
       "type": "package",
@@ -149,6 +297,10 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Loyc.Collections >= 29.0.3",
+      "Loyc.Essentials >= 29.0.3",
+      "Loyc.Math >= 29.0.3",
+      "Loyc.Syntax >= 29.0.3",
       "MSBuilder.CI >= 0.1.2",
       "NuGet.Frameworks >= 6.0.0",
       "OxyPlot.Core >= 2.1.0",
@@ -187,7 +339,7 @@
       },
       "frameworks": {
         "net5.0-windows7.0": {
-          "targetAlias": "net5.0-windows7.0",
+          "targetAlias": "net5.0-windows",
           "projectReferences": {}
         }
       },
@@ -199,8 +351,24 @@
     },
     "frameworks": {
       "net5.0-windows7.0": {
-        "targetAlias": "net5.0-windows7.0",
+        "targetAlias": "net5.0-windows",
         "dependencies": {
+          "Loyc.Collections": {
+            "target": "Package",
+            "version": "[29.0.3, )"
+          },
+          "Loyc.Essentials": {
+            "target": "Package",
+            "version": "[29.0.3, )"
+          },
+          "Loyc.Math": {
+            "target": "Package",
+            "version": "[29.0.3, )"
+          },
+          "Loyc.Syntax": {
+            "target": "Package",
+            "version": "[29.0.3, )"
+          },
           "MSBuilder.CI": {
             "target": "Package",
             "version": "[0.1.2, )"

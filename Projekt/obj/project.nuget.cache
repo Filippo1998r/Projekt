@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Uxo03d6saabimahselZdVuW/6ZxqtX+eoeqEp0g4xuyOcpy8rDpZ/Cvf8a1TQdseQLyZiqSO6NmC1YXqnn6Hlg==",
+  "dgSpecHash": "3fOXFOnaKL5xgbR0q6OXqNGL5aAjClsYP3x6sADHfAfa26nmIrXes6gZNTOZi0k6NuTOOouNwMwxWpUKhCByzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Filippo\\Source\\Repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj",
+  "projectFilePath": "C:\\Users\\Filippo\\source\\repos\\Filippo1998r\\Projekt\\Projekt\\Projekt.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Filippo\\.nuget\\packages\\loyc.collections\\29.0.3\\loyc.collections.29.0.3.nupkg.sha512",
+    "C:\\Users\\Filippo\\.nuget\\packages\\loyc.essentials\\29.0.3\\loyc.essentials.29.0.3.nupkg.sha512",
+    "C:\\Users\\Filippo\\.nuget\\packages\\loyc.interfaces\\29.0.3\\loyc.interfaces.29.0.3.nupkg.sha512",
+    "C:\\Users\\Filippo\\.nuget\\packages\\loyc.math\\29.0.3\\loyc.math.29.0.3.nupkg.sha512",
+    "C:\\Users\\Filippo\\.nuget\\packages\\loyc.syntax\\29.0.3\\loyc.syntax.29.0.3.nupkg.sha512",
     "C:\\Users\\Filippo\\.nuget\\packages\\msbuilder.ci\\0.1.2\\msbuilder.ci.0.1.2.nupkg.sha512",
     "C:\\Users\\Filippo\\.nuget\\packages\\nuget.frameworks\\6.0.0\\nuget.frameworks.6.0.0.nupkg.sha512",
     "C:\\Users\\Filippo\\.nuget\\packages\\oxyplot.core\\2.1.0\\oxyplot.core.2.1.0.nupkg.sha512",
